@@ -1,10 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{% endblock %}
+
+{% block javascripts %}
+    
+        
+ {% endblock %}
 
 {% block body %}
-<style>
-       body {
+   <style>
+      body {
         background-color: #FFEBEE
     }
     
@@ -30,7 +34,12 @@
     .card-body {
         padding:10px;
     }
-</style>
+  
+   </style>
 
+   <h1>LISTE DES DIRIGEANTS ET SOCIETES</h1>
 
+       <button class="btn btn-primary" type="submit" id="bouton"><a href="{{path('liste_dirigeant')}}">DIRIGEANT</a></button>
+   
 {% endblock %}
+

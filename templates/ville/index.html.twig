@@ -1,20 +1,146 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello VilleController!{% endblock %}
-
 {% block body %}
 <style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    body {
+        background-color: #FFEBEE
+    }
+    
+    h1 {
+        margin-left: 450px;
+    }
+    
+    .retour{
+         margin-left: 125px;
+        margin-top: 30px;
+        width: 100px;
+        height: 30px;
+        font-weight: bold;
+        background-color: grey;
+        border-radius: 8px;
+    }
+    #bouton {
+        margin-left: 200px;
+        margin-top: 30px;
+        width: 100px;
+        height: 30px;
+        font-weight: bold;
+        background-color: grey;
+        border-radius: 8px;
+    }
+    
+    .card {
+        /* width: 400px; */
+        background-color: #fff;
+        border: none;
+        border-radius: 12px;
+        max-width: 600px;
+        margin-left: 400px;
+    }
+    
+    label.radio {
+        cursor: pointer;
+        width: 100%
+    }
+    
+    label.radio input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        visibility: hidden;
+        pointer-events: none
+    }
+    
+    label.radio span {
+        padding: 7px 14px;
+        border: 2px solid #eee;
+        display: inline-block;
+        color: #039be5;
+        border-radius: 10px;
+        width: 100%;
+        height: 48px;
+        line-height: 27px
+    }
+    
+    label.radio input:checked+span {
+        border-color: #039BE5;
+        background-color: #81D4FA;
+        color: #fff;
+        border-radius: 9px;
+        height: 48px;
+        line-height: 27px
+    }
+    
+    .form-control {
+        margin-top: 10px;
+        height: 48px;
+        border: 2px solid #eee;
+        border-radius: 10px
+    }
+    
+    .form-control:focus {
+        box-shadow: none;
+        border: 2px solid #039BE5
+    }
+    
+    .agree-text {
+        font-size: 12px
+    }
+    
+    .terms {
+        font-size: 12px;
+        text-decoration: none;
+        color: #039BE5
+    }
+    
+    .confirm-button {
+        height: 50px;
+        border-radius: 10px
+    }
+    
+    .form-group {
+        display: grid;
+        /* grid-template-columns: max-content auto; */
+        grid-template-columns: 20% auto;
+        column-gap: 1em;
+    }
+    
+    .form-group label {
+        margin: auto 0;
+    }
+    
+    .card-body {
+        padding: 2em 3em;
+    }
 </style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+<h1> VILLE ET CODE POSTAL</h1>
+{{ form_start(formVille) }}
+<div class="container mt-5 mb-5 d-flex justify-content-center">
+    <div class="card px-1 py-4">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="">Nom</label> {{form_widget(formVille.nom)}}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="">Code Postal</label> {{form_widget(formVille.codePostal)}}
+                    </div>
+                </div>
+            </div>
+          
+         
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/ONJA MAMPITA YOLANDE/Documents/DEV/PHPSymfony/src/Controller/VilleController.php'|file_link(0) }}">src/Controller/VilleController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/ONJA MAMPITA YOLANDE/Documents/DEV/PHPSymfony/templates/ville/index.html.twig'|file_link(0) }}">templates/ville/index.html.twig</a></code></li>
-    </ul>
+            {{ form_end(formVille) }}
+            <button class="btn btn-primary" type="submit" id="bouton">AJOUTER</button>
+            
+        </div>
+    </div>
+</div>
 </div>
 {% endblock %}

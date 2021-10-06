@@ -27,4 +27,12 @@ class PricipalController extends AbstractController
         
         ]);
     }
+    /**
+     * 
+     *
+     * @Route("/apropos", name="apropos")
+     */
+    public function apropos(){
+            return $this->render('apropos.html.twig');
+    }
 }
