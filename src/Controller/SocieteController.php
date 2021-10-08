@@ -76,7 +76,7 @@ class SocieteController extends AbstractController
 
                 $manager->persist($societe);
                 $manager->flush();
-                return $this->redirectToRoute('societe');
+                return $this->redirectToRoute('liste_societe');
               }
 
               

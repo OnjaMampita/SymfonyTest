@@ -14,11 +14,15 @@ class ListeSocieteController extends AbstractController
      */
     public function index(): Response
     {
-        $listesociete = $this->getDoctrine()->getRepository(Societes::class)->findAll();
-
-
+        $listesocietes = $this->getDoctrine()->getRepository(Societes::class)->findAll();
+    //     // $table=$listesociete->();
+        
+    //     foreach($listesocietes as $listesociete){
+    //         $list=$listesociete;
+    //     }
+    //  dd($list);
         return $this->render('liste_societe/index.html.twig', [
-            'listesociete'=>$listesociete,
+            'listesociete'=>$listesocietes,
             'controller_name' => 'ListeSocieteController'
         ]);
     }

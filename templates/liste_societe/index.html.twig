@@ -48,7 +48,7 @@ tr{
 
 </style>
 
-    <h1> LISTE DES DIRIGEANTS</h1>
+    <h1> LISTE DES SOCIETES</h1>
 
         
           
@@ -68,7 +68,11 @@ tr{
                     <tr class="table-danger">
                         <td class=e"nom">{{societe.nom}}</td>
                         <td>{{societe.description}}</td>
-                        <td>{{societe.type}}</td>
+                        <td>
+                        {% for test in societe.type %}
+                            {{test}} &nbsp;
+                        {% endfor %}
+                        </td>
                         <td>{{societe.codePostal}}</td>
                         <td>{{societe.ville}}</td>
                         <td>
