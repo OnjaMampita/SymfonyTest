@@ -27,7 +27,7 @@ class DirigeantController extends AbstractController
                $manager->persist($dirigeant);
                $manager->flush();
                //rendre la page vide après ajout
-               return $this->redirectToRoute('dirigeant');
+               return $this->redirectToRoute('liste_dirigeant');
             }   
 
         return $this->render('dirigeant/index.html.twig', [

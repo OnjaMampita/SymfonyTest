@@ -56,19 +56,21 @@ tr{
             <thead>
                 <tr>
                 <th scope="col" class="nom">Nom</th>
-                <th scope="col">Prénom</th>
-                <th scope="col">Sexe</th>
-                <th scope="col">Adresse mail</th>
+                <th scope="col">Déscription</th>
+                <th scope="col">Type</th>
+                <th scope="col">Code Postal</th>
+                <th scope="col">Ville</th>
                
                 </tr>
             </thead>
-            {% for dirigeant in listedirigeants %}
+            {% for societe in listesociete %}
                 <tbody>
                     <tr class="table-danger">
-                        <td class=e"nom">{{dirigeant.nom}}</td>
-                        <td>{{dirigeant.prenom}}</td>
-                        <td>{{dirigeant.sexe}}</td>
-                        <td>{{dirigeant.mail}}</td>
+                        <td class=e"nom">{{societe.nom}}</td>
+                        <td>{{societe.description}}</td>
+                        <td>{{societe.type}}</td>
+                        <td>{{societe.codePostal}}</td>
+                        <td>{{societe.ville}}</td>
                         <td>
                              <button class="btn btn-primary" type="submit" id="boutons">MODIFIER</button>
                               <button class="btn btn-primary" type="submit" id="bouton">SUPPRIMER</button>

@@ -50,7 +50,12 @@ class SocieteType extends AbstractType
                 'choices' => [
                     'Antananarivo' => 'Antananarivo',
                     'Antsirabe' => 'Antsiarabe',
-                    'Anjozorobe'=>'Anjozorobe'
+                    'Anjozorobe'=>'Anjozorobe',
+                    'Antananarivo Nord'=>'Antananarivo Nord',
+                    'Antananarivo Sud'=>'Antananarivo Sud',
+                    'Ankazobe'=>'Ankazobe',
+                    'Ambohidratrimo'=>'Ambohidratrimo',
+                    'Andramasina'=>'Andramasina',
                 ],
                 'expanded'=>false,
                 'multiple'=>false

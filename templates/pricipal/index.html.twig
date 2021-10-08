@@ -12,6 +12,27 @@
         
         text-align:center;
     }
+    #boutons{
+        width:300px;
+        height:100px;
+        margin-left:200px;
+        font-size:50px;
+        
+    }
+    #bouton{
+        width:300px;
+        height:100px;
+        margin-left:300px;
+         font-size:50px;
+         background-color:white;
+    }
+    #bouton a{
+         text-decoration:none;
+    }
+     #boutons a{
+         text-decoration:none;
+    }
+
     
   
     
@@ -31,6 +52,10 @@
         padding:10px;
     }
 </style>
+<h1>AFFICHER LES LISTES</h1>
+
+                 <button class="btn btn-primary" type="submit" id="boutons"><a href="{{path('liste_dirigeant')}}">DIRIGEANT<a/></button>
+                <button class="btn btn-primary" type="submit" id="bouton"  ><a href="{{path('liste_societe')}}">SOCIETE<a/></button>
 
 
 {% endblock %}

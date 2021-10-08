@@ -5,7 +5,9 @@
     }
     
     h1 {
-        margin-left: 500px;
+        margin-top :10px;
+        margin-left: 450px;
+        font-weight:bold;
     }
     
     .retour {
@@ -29,27 +31,28 @@
     }
     
     .card {
-        /* width: 400px; */
+         width:75%;
         background-color: #fff;
         border: none;
         border-radius: 12px;
-        max-width: 600px;
-        margin-left: 400px;
+        max-width: 1000px;
+        margin-bottom:20px;
+    
     }
     
-    label.radio {
+    {# label.radio {
         cursor: pointer;
         width: 100%
-    }
+    } #}
     
-    label.radio input {
+    {# label.radio input {
         position: absolute;
         top: 0;
         left: 0;
         visibility: hidden;
         pointer-events: none
-    }
-    
+    } #}
+{#     
     label.radio span {
         padding: 7px 14px;
         border: 2px solid #eee;
@@ -69,8 +72,8 @@
         height: 48px;
         line-height: 27px
     }
-    
-    .form-control {
+     #}
+    {# .form-control {
         margin-top: 10px;
         height: 48px;
         border: 2px solid #eee;
@@ -96,71 +99,155 @@
         height: 50px;
         border-radius: 10px
     }
+     #}
     
     .form-group {
         display: grid;
         /* grid-template-columns: max-content auto; */
         grid-template-columns: 20% auto;
         column-gap: 1em;
+        padding-top:30px;
     }
-    
     .form-group label {
         margin: auto 0;
+        font-size:20px;
     }
-    
+     
     .card-body {
         padding: 2em 3em;
+    }
+    .input{
+        height:40px;
+        border-radius:10px;
+        font-size:20px;
+    }
+    .check{
+        margin-left:40px;
     }
 </style>
 
 
 <h1>FORMULAIRE SOCIETE</h1>
-{{ form_start(formSociete) }}
-<div class="container mt-5 mb-5 d-flex justify-content-center">
-    <div class="card px-1 py-4">
-        <div class="card-body">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="form-group">
-                        <label for="">Nom</label> {{form_widget(formSociete.nom)}}
+        {# {{ form_start(formSociete) }} #}
+    <form action="" method="post">
+        <div class="container mt-5 mb-5 d-flex justify-content-center">
+            <div class="card px-1 py-4">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                            <label for="">Nom </label>  {# {{form_widget(formSociete.nom)}} #}
+                            <input type="text" name="nom" id="nom" placeholder="Nom de la société" class="input"/>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="form-group">
-                        <label for="">Description</label> {{form_widget(formSociete.description)}}
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="">Description</label> {#{{form_widget(formSociete.description)}} #}
+                                <textarea name="description" placeholder="Déscription de la société" class="input"></textarea>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="form-group">
-                        <label for="">Type</label> {{form_widget(formSociete.type)}}
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="form-group">
-                        <label for="">Code postal</label> {{form_widget(formSociete.codePostal)}}
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="form-group">
-                        <label for="">Ville</label> {{form_widget(formSociete.ville)}}
-                    </div>
-                </div>
-            </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="">Type  </label> {# {{form_widget(formSociete.type)}} #}
 
-            {{ form_end(formSociete) }}
-            <button class="btn btn-primary" type="submit" id="bouton">AJOUTER</button>
+                                <div>
+                                        <input type="checkbox" name="type" id="type" checked/>
+                                        <label for="type2">SARL</label>
+                                    
+                                        <input type="checkbox"  name="type2" id="type2" />
+                                        <label for="type2">EURL</label>
+                                        <input type="checkbox"  name="type3" id="type3" />
+                                        <label for="type3">SELARL</label>
+                                        <input type="checkbox"  name="type4" id="tye4" />
+                                        <label for="type4">SA</label>
+                                        <input type="checkbox"  name="type5" id="type5" />
+                                        <label for="type5">SASU</label>
+                                        <input type="checkbox"  name="type6" id="type6" />
+                                        <label for="type6">SNC</label>
+                                        <input type="checkbox"  name="type7" id="type7" />
+                                        <label for="type7">SCP</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                
 
 
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="">Code postal</label>  {#{{form_widget(formSociete.codePostal)}}  #}
+                            <select name="codepostal" id="codepostal"  onchange="gensel2();" class="input">
+                                <optgroup>
+                                    <option value="101">101</option>
+                                    <option value="102">102</option>
+                                    <option value="103">103</option>
+                                    <option value="104">104</option>
+                                    <option value="105">105</option>
+                                    <option value="106">106</option>
+                                    <option value="107">107</option>
+                                    <option value="108">108</option>
+                                    <option value="109">109</option>
+                                    <option value="110">110</option>
+                                </optgroup>
+                            <select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="">Ville </label>{#{{form_widget(formSociete.ville)}}  #}
+                                    <select size=1 name="ville" id="ville" class="input">
+                                        <optgroup label="Ville">
+                                        </optgroup>
+                                    </select> 
+                                                    
+                            </div>
+                        </div>
+                    </div>
+
+                    
+            
+
+                {# {{ form_end(formSociete) }} #}
+                    <button class="btn btn-primary" type="submit" id="bouton">AJOUTER</button>
+
+
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-</div>
+    </form>
+
+<script type="text/javascript">
+
+      var liste = new Array(
+            new Array("Antananarivo"),
+            new Array("Antananarivo-Sud"),
+             new Array("Antananarivo-Nord"),
+             new Array("Ambatolampy"),
+            new Array("Ambohidratrimo"),
+            new Array("Andramasina"),
+            new Array("Anjozorobe"),
+            new Array("Ankazobe"),
+            new Array("Antanifotsy"),
+            new Array("Antsirabe")
+        );
+        function gensel2() {
+            var s1 = document.getElementById("codepostal");
+            var s2 = document.getElementById("ville");
+            s2.length = 0;
+            for (var n = 0; n < liste[s1.selectedIndex].length; n++) {
+                s2.length++;
+                s2.options[s2.length - 1].text = liste[s1.selectedIndex][n];
+            }
+        }
+    </script>
+
 {% endblock %}
