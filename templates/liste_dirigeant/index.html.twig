@@ -42,8 +42,13 @@ tr{
     .nom{
         margin-left:10px;
     }
-    .boutons{
+    .boutons  {
         margin-right : 20px;
+        color:White;
+    }
+    a{
+        color:black;
+        text-decoration:none;
     }
 
 </style>
@@ -70,8 +75,10 @@ tr{
                         <td>{{dirigeant.sexe}}</td>
                         <td>{{dirigeant.mail}}</td>
                         <td>
-                             <button class="btn btn-primary" type="submit" id="boutons">MODIFIER</button>
-                              <button class="btn btn-primary" type="submit" id="bouton">SUPPRIMER</button>
+                             <button class="btn btn-primary" type="submit" id="boutons"><a href="{{ path('edit_dirigeant', {
+                            id: dirigeant.id }) }}">MODIFIER</a></button>
+                              <button class="btn btn-primary" type="submit" id="bouton"><a href="{{ path('delete_dirigeant', {
+                            id: dirigeant.id }) }}">SUPPRIMER</a></button>
                         </td>
                     </tr>
                 

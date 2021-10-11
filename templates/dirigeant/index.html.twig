@@ -158,8 +158,12 @@
          
 
             {{ form_end(formDirigeant) }}
-            <button class="btn btn-primary" type="submit" id="bouton">AJOUTER</button>
-            
+            {% if editMode %}
+                <button class="btn btn-primary" type="submit" id="bouton">MODIFIER</button>
+            {% else %}
+                 <button class="btn btn-primary" type="submit" id="bouton">AJOUTER</button>
+            {% endif%}
+
         </div>
     </div>
 </div>

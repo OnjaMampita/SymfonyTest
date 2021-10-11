@@ -3,9 +3,12 @@
 namespace App\Controller;
 
 use App\Entity\Dirigeants;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\DirigeantsRepository;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ListeDirigeantController extends AbstractController
 {
@@ -29,4 +32,23 @@ class ListeDirigeantController extends AbstractController
 
         
     }
+
+    /**
+     * 
+     * @Route("/delete_dirgeant/{id}", name="delete_dirigeant")
+     */
+
+    public function delete_dirigeant($id, DirigeantsRepository $dirigeantsRepository, Request $request,EntityManagerInterface $manager){
+        $dirigeant = $dirigeantsRepository->find($id);
+        if(!$dirigeant){
+            throw $this->createNotFoundException("Identifiant n'existe pas ".$id);
+    }    
+        $manager->remove($dirigeant);
+        $manager->flush();
+    
+
+        return $this->redirect($this->generateUrl('liste_dirigeant'));
+    
+    }
+
 }
